@@ -22,6 +22,7 @@
 <meta property="og:image" content="https://proplumbingthousandoaks.com/android-chrome-512x512.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://proplumbingthousandoaks.com/android-chrome-512x512.png">
+<link rel="preload" as="image" href="/images/home-hero-thousand-oaks.jpg" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--choc:#4A2E1E;--choc-d:#331F14;--turq:#1FC8C8;--turq-d:#17A2A2;--gray:#5C554E;--line:#EDE4DC;--bg:#FFFFFF}
@@ -121,6 +122,7 @@ footer .foot-links a:hover{color:var(--turq-d)}
   .hamburger{display:flex}
   .sticky-cta{display:block}
   body{padding-bottom:60px}
+}
 .img-banner{margin:0 0 8px}
 .img-banner img{width:100%;height:auto;max-height:480px;object-fit:cover;display:block;border-radius:6px}
 /* Location-page emergency + ZIP components */
@@ -134,6 +136,45 @@ footer .foot-links a:hover{color:var(--turq-d)}
 .prep-card p{font-size:13.5px;color:var(--gray);margin:0}
 @media(max-width:900px){.prep-cards{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.prep-cards{grid-template-columns:1fr}.prep-card{border-right:none;border-bottom:1px solid var(--line)}}
+
+/* v11 remediation */
+.hero.has-hero{position:relative;isolation:isolate;color:#fff;padding:72px 0}
+.hero.has-hero .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero.has-hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(51,31,20,.93) 0%,rgba(51,31,20,.82) 55%,rgba(51,31,20,.6) 100%)}
+.hero.has-hero h1{color:#fff}
+.hero.has-hero h1 span{color:var(--turq)}
+.hero.has-hero p.lead{color:#fff;border-left-color:var(--turq)}
+.hero.has-hero .kick{color:var(--turq)}
+.hero.has-hero .byline{color:#EDE4DC}
+.hero.has-hero .btn.ghost{background:transparent;color:#fff;border-color:#fff}
+.hero.has-hero .emg-badge{background:var(--turq);color:var(--choc-d)}
+.hero.has-hero .zip-chip{background:rgba(255,255,255,.14);border-color:#fff;color:#fff}
+.hero.has-hero .sidebox{background:#fff;color:#231911}
+.hero.one .wrap{grid-template-columns:1fr}
+.hero.one .wrap>div{max-width:820px}
+.byline{font-size:13px;color:var(--gray)}
+main p+p{margin-top:14px}
+.bodycopy p{margin-bottom:14px}
+.bodycopy h2,.bodycopy h3{margin-bottom:14px}
+.twocol{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:44px;align-items:start}
+.twocol>article{min-width:0;max-width:820px}
+.sidecard{position:sticky;top:24px;align-self:start;border:1px solid var(--line);border-top:4px solid var(--turq);border-radius:4px;padding:22px;background:#fff}
+.sidecard h3{font-size:20px;margin:6px 0 10px;line-height:1.25}
+.sidecard p{font-size:14.5px;color:var(--gray);margin:0 0 14px}
+.sidecard .btn{width:100%;justify-content:center;padding:13px 18px}
+.sidecard ul{list-style:none;margin:16px 0 0;font-size:13.5px}
+.sidecard li{padding:7px 0 7px 22px;border-top:1px solid var(--line);position:relative}
+.sidecard li:before{content:"\2713";position:absolute;left:0;color:var(--turq-d);font-weight:700}
+.sidecard .sc-link{display:block;margin-top:14px;font-weight:600;color:var(--turq-d);text-decoration:none;font-size:14px}
+.twocol .prep-cards{grid-template-columns:1fr 1fr}
+.twocol .prep-card{border-bottom:1px solid var(--line)}
+.twocol .prep-card:nth-child(2n){border-right:none}
+.twocol .pullquote[style]{margin-left:0!important;margin-right:0!important}
+.localnote{border-left:4px solid var(--turq);background:#FBF7F3;padding:20px 24px;margin:30px 0 8px;border-radius:0 4px 4px 0}
+.localnote h2{font-size:24px;margin:0 0 14px}
+.srcnote{font-size:13px;color:var(--gray)}
+@media(max-width:900px){.pullquote[style]{margin-left:0!important;margin-right:0!important}.tocrow p{flex-shrink:1;max-width:100%;text-align:left}.tocrow h3{flex-shrink:1}.twocol{grid-template-columns:1fr}.sidecard{position:static}.hero.has-hero{padding:48px 0}}
+@media(max-width:520px){.tocrow p{flex-shrink:1;max-width:100%;text-align:left}.tocrow h3{flex-shrink:1}.twocol .prep-cards{grid-template-columns:1fr}.twocol .prep-card{border-right:none}}
 </style>
 
 <script type="application/ld+json">
@@ -170,10 +211,38 @@ footer .foot-links a:hover{color:var(--turq-d)}
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"Do you charge for an estimate?","acceptedAnswer":{"@type":"Answer","text":"Diagnostic visits are quoted upfront when you call. The quote for the actual repair is always flat-rate and agreed before we start work."}},
-    {"@type":"Question","name":"Are you licensed?","acceptedAnswer":{"@type":"Answer","text":"Yes, California CSLB C-36 licensed plumbing contractors."}},
-    {"@type":"Question","name":"Do you serve areas outside Thousand Oaks?","acceptedAnswer":{"@type":"Answer","text":"Yes, we cover Thousand Oaks and the surrounding Conejo Valley, including Newbury Park, Westlake Village, Agoura Hills, Oak Park, Calabasas, Moorpark, Camarillo, and Simi Valley."}},
-    {"@type":"Question","name":"Is this really 24/7?","acceptedAnswer":{"@type":"Answer","text":"Yes, our emergency line is monitored around the clock for genuine plumbing emergencies."}}
+    {
+      "@type": "Question",
+      "name": "Do you charge for an estimate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Diagnostic visits are quoted upfront when you call. The quote for the actual repair is always flat-rate and agreed before we start work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are you licensed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, California CSLB C-36 licensed plumbing contractors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you serve areas outside Thousand Oaks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we cover Thousand Oaks and the surrounding Conejo Valley, including Newbury Park, Westlake Village, Agoura Hills, Oak Park, Calabasas, Moorpark, Camarillo, and Simi Valley."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this really 24/7?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our emergency line is monitored around the clock for genuine plumbing emergencies."
+      }
+    }
   ]
 }
 </script>
@@ -221,7 +290,7 @@ footer .foot-links a:hover{color:var(--turq-d)}
 <main id="main">
 
 
-<section class="hero"><div class="wrap">
+<section class="hero has-hero"><img class="hero-bg" src="/images/home-hero-thousand-oaks.jpg" alt="Residential neighborhood street in Thousand Oaks, CA" width="1600" height="900" fetchpriority="high" decoding="async"><div class="wrap">
 <div>
 <h1>Thousand Oaks Plumber, <span>Trusted Across The Conejo Valley</span></h1>
 <p class="lead">Licensed plumbers for water heaters, leak detection, drain cleaning, and emergencies in Thousand Oaks, Newbury Park, Westlake Village, and the surrounding Conejo Valley - with an upfront price before any work starts.</p>
@@ -234,15 +303,25 @@ footer .foot-links a:hover{color:var(--turq-d)}
 </div>
 </div></section>
 
-<div class="wrap img-banner"><img src="/images/home-hero-thousand-oaks.jpg" alt="Residential neighborhood street in Thousand Oaks, CA" loading="lazy" width="1600" height="900"></div>
+<section class="sec"><div class="wrap bodycopy">
+<div class="kick">Open 24/7</div>
+<h2>Emergency Plumber In Thousand Oaks, Day Or Night</h2>
+<p>Plumbing emergencies do not keep business hours. A burst pipe, a sewer backup, a failed water heater or water spreading across a floor all get priority on our 24/7 emergency line, and we answer for Thousand Oaks, Newbury Park, Westlake Village and the rest of the Conejo Valley.</p>
+<p>While you wait for us, the same first steps help in almost every case. Shut off the water at the main valve if you can reach it safely, keep clear of standing water near outlets, and call <a href="tel:+17147508637">(714) 750-8637</a>. Tell us what you see and we will plan the right equipment before we arrive.</p>
+<div class="prep-cards"><div class="prep-card"><b>Stop the water</b><p>Close the main shutoff valve or the fixture valve if you can reach it safely.</p></div><div class="prep-card"><b>Stay safe</b><p>Keep away from standing water near electrical equipment and leave at once if you smell gas.</p></div><div class="prep-card"><b>Document the damage</b><p>Take photos before cleanup so you have them for an insurance claim.</p></div><div class="prep-card"><b>Call our 24/7 line</b><p>Call (714) 750-8637 and we will dispatch as soon as we can reach you.</p></div></div>
+<h3>Emergency Services We Cover</h3>
+<div class="areas"><a href="/leak-detection/">Emergency Leak Detection</a><a href="/slab-leak-detection-and-repair/">Emergency Slab Leak Detection & Repair</a><a href="/sewer-line-repair/">Emergency Sewer Line Repair & Backup Service</a><a href="/drain-cleaning-and-unclogging/">Emergency Drain Cleaning & Unclogging</a><a href="/water-heater-repair/">Emergency Water Heater Repair</a><a href="/water-heater-installation-and-replacement/">Emergency Water Heater Replacement & Installation</a><a href="/sump-pump-repair-and-installation/">Emergency Sump Pump Repair & Installation</a><a href="/water-damage-restoration/">Emergency Water Damage Restoration</a><a href="/toilet-repair-and-installation/">Emergency Toilet Repair & Installation</a><a href="/faucet-and-sink-repair/">Emergency Faucet, Valve & Sink Repair</a></div>
+</div></section>
 
 <section class="sec"><div class="wrap bodycopy">
 <div class="kick">Why Thousand Oaks</div>
 <h2>Built For This Ground, Not A Generic Service Area</h2>
-<p>Thousand Oaks plumbing problems don't look the same everywhere in the city. Much of the Conejo Valley sits on expansive clay soil across much of the Conejo Valley that swells in wet winters and contracts in the long dry summers, putting mechanical stress on buried pipe and slab foundations, especially on the area's sloped lots. That's a different failure pattern than a house on flat, stable ground - and it's one reason a slab leak or a hairline crack in a sewer line shows up here more than in some neighboring markets.</p>
+<p>Thousand Oaks plumbing problems don't look the same everywhere in the city. Much of the Conejo Valley sits on expansive clay soil across much of the Conejo Valley that swells in wet winters and contracts in the long dry summers, putting mechanical stress on buried pipe and slab foundations, especially on the area's sloped lots.</p>
+<p>That's a different failure pattern than a house on flat, stable ground - and it's one reason a slab leak or a hairline crack in a sewer line shows up here more than in some neighboring markets.</p>
 <p>The housing stock adds another layer. Thousand Oaks has a genuine mix of older ranch-style homes from the area's 1960s-80s growth era alongside newer construction, with a documented case of a 71-year-old home's main drain system failing in multiple places. Older galvanized and copper supply lines behave differently than the PEX and copper runs going into newer builds, and a plumber who treats every house the same way ends up guessing instead of diagnosing.</p>
 <p>We built this site around that reality: diagnose first, quote a flat price before any work starts, and use the right approach for the actual age and soil conditions of your specific property - not a one-size-fits-all repair. Every job follows California Plumbing Code (UPC-based) standards, not just a generic national default.</p>
-<p>That same thinking applies across the Conejo Valley. Hillside lots and clay soil are common in and around Thousand Oaks, while places like Camarillo and Simi Valley sit on flatter ground, so no two houses on that ground fail the same way. A slab leak call in one neighborhood and a root-intrusion sewer call two miles away can trace back to very different causes, even though both start with a call to us. Knowing that context up front is part of why our first visit is a real diagnosis, not a guess.</p>
+<p>That same thinking applies across the Conejo Valley. Hillside lots and clay soil are common in and around Thousand Oaks, while places like Camarillo and Simi Valley sit on flatter ground, so no two houses on that ground fail the same way.</p>
+<p>A slab leak call in one neighborhood and a root-intrusion sewer call two miles away can trace back to very different causes, even though both start with a call to us. Knowing that context up front is part of why our first visit is a real diagnosis, not a guess.</p>
 <p>We keep every quote flat-rate and explained before work starts, whether that's a $150 drain snake or a five-figure repipe - the goal is that you know exactly what you're agreeing to before a tool touches your plumbing, every time.</p>
 <p>A fixture that's been acting up for weeks or water actively spreading across the floor right now both start the same way: a real technician on the phone who asks what's actually happening before quoting anything, then a dispatched plumber who diagnoses on-site before recommending a fix.</p>
 </div></section>

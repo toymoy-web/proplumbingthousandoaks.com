@@ -22,6 +22,7 @@
 <meta property="og:image" content="https://proplumbingthousandoaks.com/android-chrome-512x512.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://proplumbingthousandoaks.com/android-chrome-512x512.png">
+<link rel="preload" as="image" href="/images/newbury-park-landmark.jpg" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--choc:#4A2E1E;--choc-d:#331F14;--turq:#1FC8C8;--turq-d:#17A2A2;--gray:#5C554E;--line:#EDE4DC;--bg:#FFFFFF}
@@ -121,6 +122,7 @@ footer .foot-links a:hover{color:var(--turq-d)}
   .hamburger{display:flex}
   .sticky-cta{display:block}
   body{padding-bottom:60px}
+}
 .img-banner{margin:0 0 8px}
 .img-banner img{width:100%;height:auto;max-height:480px;object-fit:cover;display:block;border-radius:6px}
 /* Location-page emergency + ZIP components */
@@ -134,38 +136,134 @@ footer .foot-links a:hover{color:var(--turq-d)}
 .prep-card p{font-size:13.5px;color:var(--gray);margin:0}
 @media(max-width:900px){.prep-cards{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.prep-cards{grid-template-columns:1fr}.prep-card{border-right:none;border-bottom:1px solid var(--line)}}
+
+/* v11 remediation */
+.hero.has-hero{position:relative;isolation:isolate;color:#fff;padding:72px 0}
+.hero.has-hero .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero.has-hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(51,31,20,.93) 0%,rgba(51,31,20,.82) 55%,rgba(51,31,20,.6) 100%)}
+.hero.has-hero h1{color:#fff}
+.hero.has-hero h1 span{color:var(--turq)}
+.hero.has-hero p.lead{color:#fff;border-left-color:var(--turq)}
+.hero.has-hero .kick{color:var(--turq)}
+.hero.has-hero .byline{color:#EDE4DC}
+.hero.has-hero .btn.ghost{background:transparent;color:#fff;border-color:#fff}
+.hero.has-hero .emg-badge{background:var(--turq);color:var(--choc-d)}
+.hero.has-hero .zip-chip{background:rgba(255,255,255,.14);border-color:#fff;color:#fff}
+.hero.has-hero .sidebox{background:#fff;color:#231911}
+.hero.one .wrap{grid-template-columns:1fr}
+.hero.one .wrap>div{max-width:820px}
+.byline{font-size:13px;color:var(--gray)}
+main p+p{margin-top:14px}
+.bodycopy p{margin-bottom:14px}
+.bodycopy h2,.bodycopy h3{margin-bottom:14px}
+.twocol{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:44px;align-items:start}
+.twocol>article{min-width:0;max-width:820px}
+.sidecard{position:sticky;top:24px;align-self:start;border:1px solid var(--line);border-top:4px solid var(--turq);border-radius:4px;padding:22px;background:#fff}
+.sidecard h3{font-size:20px;margin:6px 0 10px;line-height:1.25}
+.sidecard p{font-size:14.5px;color:var(--gray);margin:0 0 14px}
+.sidecard .btn{width:100%;justify-content:center;padding:13px 18px}
+.sidecard ul{list-style:none;margin:16px 0 0;font-size:13.5px}
+.sidecard li{padding:7px 0 7px 22px;border-top:1px solid var(--line);position:relative}
+.sidecard li:before{content:"\2713";position:absolute;left:0;color:var(--turq-d);font-weight:700}
+.sidecard .sc-link{display:block;margin-top:14px;font-weight:600;color:var(--turq-d);text-decoration:none;font-size:14px}
+.twocol .prep-cards{grid-template-columns:1fr 1fr}
+.twocol .prep-card{border-bottom:1px solid var(--line)}
+.twocol .prep-card:nth-child(2n){border-right:none}
+.twocol .pullquote[style]{margin-left:0!important;margin-right:0!important}
+.localnote{border-left:4px solid var(--turq);background:#FBF7F3;padding:20px 24px;margin:30px 0 8px;border-radius:0 4px 4px 0}
+.localnote h2{font-size:24px;margin:0 0 14px}
+.srcnote{font-size:13px;color:var(--gray)}
+@media(max-width:900px){.pullquote[style]{margin-left:0!important;margin-right:0!important}.tocrow p{flex-shrink:1;max-width:100%;text-align:left}.tocrow h3{flex-shrink:1}.twocol{grid-template-columns:1fr}.sidecard{position:static}.hero.has-hero{padding:48px 0}}
+@media(max-width:520px){.tocrow p{flex-shrink:1;max-width:100%;text-align:left}.tocrow h3{flex-shrink:1}.twocol .prep-cards{grid-template-columns:1fr}.twocol .prep-card{border-right:none}}
 </style>
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
-  {
-    "@type": "Plumber",
-    "name": "Thousand Oaks Pro Plumbing",
-    "telephone": "+17147508637",
-    "address": {"@type":"PostalAddress","streetAddress":"1336 Main St, Suite 7","addressLocality":"Thousand Oaks","addressRegion":"CA","postalCode":"91360","addressCountry":"US"},
-    "areaServed": "Newbury Park, CA",
-    "url": "https://proplumbingthousandoaks.com/plumber-newbury-park-ca/"
-  },
-  {
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://proplumbingthousandoaks.com/"},
-      {"@type":"ListItem","position":2,"name":"Service Areas","item":"https://proplumbingthousandoaks.com/service-areas/"},
-      {"@type":"ListItem","position":3,"name":"Emergency Plumber Newbury Park CA Near Thousand Oaks","item":"https://proplumbingthousandoaks.com/plumber-newbury-park-ca/"}
-    ]
-  },
-  {
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type":"Question","name":"Do you cover all of Newbury Park, including Dos Vientos?","acceptedAnswer":{"@type":"Answer","text":"Yes, our coverage extends across Newbury Park including Dos Vientos, the areas along Lynn Road, and the neighborhoods bordering Camarillo."}},
-      {"@type":"Question","name":"Is Newbury Park part of Thousand Oaks?","acceptedAnswer":{"@type":"Answer","text":"Yes, Newbury Park is the northern section of the city of Thousand Oaks - it has its own community identity and zip code, but it isn\u0027t a separately incorporated city."}},
-      {"@type":"Question","name":"How fast can you get to Newbury Park for an emergency?","acceptedAnswer":{"@type":"Answer","text":"Response time depends on current call volume, but Newbury Park is within our core dispatch area and gets the same 24/7 priority as the rest of Thousand Oaks."}},
-      {"@type":"Question","name":"Do you cover every ZIP code in Newbury Park?","acceptedAnswer":{"@type":"Answer","text":"Yes, we cover all of ZIP code 91320, which is the single ZIP that covers all of Newbury Park, from the older tracts along Lynn Road down to Dos Vientos near the Camarillo border."}},
-      {"@type":"Question","name":"Is emergency service available in Newbury Park?","acceptedAnswer":{"@type":"Answer","text":"Yes, our emergency line is staffed 24 hours a day for Newbury Park, and a genuine plumbing emergency here gets the same priority dispatch as anywhere else in our coverage area."}}
-    ]
-  }
+    {
+      "@type": "Plumber",
+      "name": "Thousand Oaks Pro Plumbing",
+      "telephone": "+17147508637",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1336 Main St, Suite 7",
+        "addressLocality": "Thousand Oaks",
+        "addressRegion": "CA",
+        "postalCode": "91360",
+        "addressCountry": "US"
+      },
+      "areaServed": "Newbury Park, CA",
+      "url": "https://proplumbingthousandoaks.com/plumber-newbury-park-ca/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://proplumbingthousandoaks.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Service Areas",
+          "item": "https://proplumbingthousandoaks.com/service-areas/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Emergency Plumber Newbury Park CA Near Thousand Oaks",
+          "item": "https://proplumbingthousandoaks.com/plumber-newbury-park-ca/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you cover all of Newbury Park, including Dos Vientos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, our coverage extends across Newbury Park including Dos Vientos, the areas along Lynn Road, and the neighborhoods bordering Camarillo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Newbury Park part of Thousand Oaks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Newbury Park is the northern section of the city of Thousand Oaks - it has its own community identity and zip code, but it isn't a separately incorporated city."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How fast can you get to Newbury Park for an emergency?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Response time depends on current call volume, but Newbury Park is within our core dispatch area and gets the same 24/7 priority as the rest of Thousand Oaks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you cover every ZIP code in Newbury Park?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we cover all of ZIP code 91320, which is the single ZIP that covers all of Newbury Park, from the older tracts along Lynn Road down to Dos Vientos near the Camarillo border."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is emergency service available in Newbury Park?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, our emergency line is staffed 24 hours a day for Newbury Park, and a genuine plumbing emergency here gets the same priority dispatch as anywhere else in our coverage area."
+          }
+        }
+      ]
+    }
   ]
 }
 </script>
@@ -216,7 +314,7 @@ footer .foot-links a:hover{color:var(--turq-d)}
 
 <main id="main">
 
-<section class="hero"><div class="wrap">
+<section class="hero has-hero one"><img class="hero-bg" src="/images/newbury-park-landmark.jpg" alt="Street view near the Santa Monica Mountains in Newbury Park, CA" width="1600" height="900" fetchpriority="high" decoding="async"><div class="wrap">
 <div>
 <div class="emg-badge">24/7 Emergency Line Open</div>
 <h1>Emergency Plumber Newbury Park CA Near Thousand Oaks</h1>
@@ -224,22 +322,15 @@ footer .foot-links a:hover{color:var(--turq-d)}
 <div class="cta-row"><a class="btn" href="tel:+17147508637">&#9742; Call (714) 750-8637</a></div>
 <div class="zips"><span class="zip-chip">91320</span></div>
 </div>
-<div class="sidebox">
-<div class="sidebox-label">24/7 Emergency Line Open</div>
-<div class="num"><a href="tel:+17147508637" style="color:inherit;text-decoration:none">(714) 750-8637</a></div>
-<ul><li>Around-the-clock emergency dispatch to Newbury Park</li><li>California CSLB C-36 licensed plumbing contractors</li></ul>
-</div>
 </div></section>
 
-
-<div class="wrap img-banner"><img src="/images/newbury-park-landmark.jpg" alt="Street view near the Santa Monica Mountains in Newbury Park, CA" loading="lazy" width="1600" height="900"></div>
-
-
-<section class="sec"><div class="wrap bodycopy">
+<section class="sec"><div class="wrap twocol">
+<article class="bodycopy">
 <h2>Plumbing In Newbury Park</h2>
 
 
-<p>Newbury Park sits at the north end of Thousand Oaks, tucked against the Santa Monica Mountains, and it's genuinely a tale of two housing eras. Along Lynn Road and through the older tracts, many homes date to the 1960s and still carry original supply lines and fixtures that have never been fully updated. Out toward Dos Vientos, one of the newer large communities in the area, construction is recent enough that the plumbing concerns are usually about fixtures and appliances rather than aging infrastructure.</p>
+<p>Newbury Park sits at the north end of Thousand Oaks, tucked against the Santa Monica Mountains, and it's genuinely a tale of two housing eras. Along Lynn Road and through the older tracts, many homes date to the 1960s and still carry original supply lines and fixtures that have never been fully updated.</p>
+<p>Out toward Dos Vientos, one of the newer large communities in the area, construction is recent enough that the plumbing concerns are usually about fixtures and appliances rather than aging infrastructure.</p>
 
 <h3>What We See Most In Newbury Park</h3>
 <p>In the older sections, <a href='/leak-detection/'>leak detection</a> and water heater calls trace back to original galvanized or aging copper lines more often than in the newer parts of the city - the same pattern we see across older Conejo Valley housing generally. In Dos Vientos and other newer developments, calls skew toward fixture installs, garbage disposals, and the kind of work that comes with a still-young but heavily used home.</p><p>Newbury Park's hillside lots, right up against the mountains, mean some properties deal with the same soil movement that drives <a href='/slab-leak-detection-and-repair/'>slab leak</a> risk elsewhere in the Conejo Valley - it's worth mentioning your home's approximate age and whether it's on a slope when you call, since that shapes what we bring on the truck. Every repair we perform, regardless of which part of Newbury Park it's in, meets California Plumbing Code (UPC-based) standards for pipe material, venting, and fixture connections.</p>
@@ -255,10 +346,6 @@ footer .foot-links a:hover{color:var(--turq-d)}
 
 <h3>Why Local Knowledge Matters Here</h3>
 <p>Newbury Park's position against the Santa Monica Mountains means some streets sit on genuinely different ground than others just a few blocks away - flatter valley-floor lots behave differently than the sloped lots closer to the hillside. Knowing which pattern applies to your specific street is part of why we ask about your home's general location within Newbury Park, not just the city name, when scheduling a visit.</p>
-
-</div></section>
-
-<section class="sec"><div class="wrap bodycopy">
 <h2>If You Have A Burst Pipe Or Active Leak In Newbury Park</h2>
 <p>An active leak or burst pipe is a genuine plumbing emergency. Here's what to do before help arrives, and how to reach us.</p>
 <div class="prep-cards">
@@ -267,6 +354,15 @@ footer .foot-links a:hover{color:var(--turq-d)}
 <div class="prep-card"><b>Clear The Area</b><p>Move people, pets, and belongings away from standing water or an active leak.</p></div>
 <div class="prep-card"><b>Call Our 24/7 Line</b><p>Call <a href="tel:+17147508637" style="color:var(--turq-d);font-weight:600;text-decoration:none">(714) 750-8637</a> and we'll dispatch a technician to Newbury Park right away.</p></div>
 </div>
+</article>
+<aside class="sidecard" aria-label="Call a plumber">
+<div class="kick">24/7 Emergency Line Open</div>
+<h3>Plumber In Newbury Park Today</h3>
+<p>Burst pipe, backup or no hot water? Call now and we dispatch to Newbury Park.</p>
+<a class="btn" href="tel:+17147508637">&#9742; Call (714) 750-8637</a>
+<ul><li>Flat price quoted before work starts</li><li>California CSLB C-36 licensed</li><li>Same-day service in most cases</li><li>Newbury Park + Ventura County</li></ul>
+<a class="sc-link" href="/plumbing-services/">All plumbing services &rarr;</a>
+</aside>
 </div></section>
 
 <div class="pullquote"><div class="wrap"><blockquote>Older tract off Lynn Road or a newer build out in Dos Vientos - we know the difference, and we dispatch for both.</blockquote><a class="btn choc" href="tel:+17147508637">&#9742; Call (714) 750-8637</a></div></div>

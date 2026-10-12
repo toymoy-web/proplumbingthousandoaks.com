@@ -1,2 +1,17 @@
-# No redirects required for this fresh build.
-# Add 301s here only for real legacy-path or cross-domain redirect needs.
+# 301s for blog slugs renamed to include the city
+/blog/backflow-testing-california-homeowners-guide/ /blog/backflow-testing-thousand-oaks-homeowners-guide/ 301
+/blog/backflow-testing-california-homeowners-guide /blog/backflow-testing-thousand-oaks-homeowners-guide/ 301
+/blog/diy-drain-cleaning-vs-calling-a-plumber/ /blog/diy-drain-cleaning-vs-plumber-thousand-oaks/ 301
+/blog/diy-drain-cleaning-vs-calling-a-plumber /blog/diy-drain-cleaning-vs-plumber-thousand-oaks/ 301
+/blog/renters-guide-plumbing-emergencies-conejo-valley/ /blog/renters-guide-plumbing-emergencies-thousand-oaks/ 301
+/blog/renters-guide-plumbing-emergencies-conejo-valley /blog/renters-guide-plumbing-emergencies-thousand-oaks/ 301
+/blog/smell-gas-near-water-heater-what-to-do/ /blog/smell-gas-near-water-heater-thousand-oaks/ 301
+/blog/smell-gas-near-water-heater-what-to-do /blog/smell-gas-near-water-heater-thousand-oaks/ 301
+/blog/tankless-vs-tank-water-heater-conejo-valley/ /blog/tankless-vs-tank-water-heater-thousand-oaks/ 301
+/blog/tankless-vs-tank-water-heater-conejo-valley /blog/tankless-vs-tank-water-heater-thousand-oaks/ 301
+/blog/water-heater-repair-or-replace-how-to-decide/ /blog/water-heater-repair-or-replace-thousand-oaks/ 301
+/blog/water-heater-repair-or-replace-how-to-decide /blog/water-heater-repair-or-replace-thousand-oaks/ 301
+/blog/what-to-document-for-insurance-after-water-leak/ /blog/insurance-documentation-water-leak-thousand-oaks/ 301
+/blog/what-to-document-for-insurance-after-water-leak /blog/insurance-documentation-water-leak-thousand-oaks/ 301
+/blog/why-slab-leaks-happen-more-in-thousand-oaks/ /blog/slab-leaks-thousand-oaks-causes-warning-signs/ 301
+/blog/why-slab-leaks-happen-more-in-thousand-oaks /blog/slab-leaks-thousand-oaks-causes-warning-signs/ 301

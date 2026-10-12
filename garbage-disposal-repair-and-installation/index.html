@@ -22,6 +22,7 @@
 <meta property="og:image" content="https://proplumbingthousandoaks.com/android-chrome-512x512.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://proplumbingthousandoaks.com/android-chrome-512x512.png">
+<link rel="preload" as="image" href="/images/garbage-disposal.jpg" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--choc:#4A2E1E;--choc-d:#331F14;--turq:#1FC8C8;--turq-d:#17A2A2;--gray:#5C554E;--line:#EDE4DC;--bg:#FFFFFF}
@@ -121,6 +122,7 @@ footer .foot-links a:hover{color:var(--turq-d)}
   .hamburger{display:flex}
   .sticky-cta{display:block}
   body{padding-bottom:60px}
+}
 .img-banner{margin:0 0 8px}
 .img-banner img{width:100%;height:auto;max-height:480px;object-fit:cover;display:block;border-radius:6px}
 /* Location-page emergency + ZIP components */
@@ -134,6 +136,45 @@ footer .foot-links a:hover{color:var(--turq-d)}
 .prep-card p{font-size:13.5px;color:var(--gray);margin:0}
 @media(max-width:900px){.prep-cards{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.prep-cards{grid-template-columns:1fr}.prep-card{border-right:none;border-bottom:1px solid var(--line)}}
+
+/* v11 remediation */
+.hero.has-hero{position:relative;isolation:isolate;color:#fff;padding:72px 0}
+.hero.has-hero .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero.has-hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(51,31,20,.93) 0%,rgba(51,31,20,.82) 55%,rgba(51,31,20,.6) 100%)}
+.hero.has-hero h1{color:#fff}
+.hero.has-hero h1 span{color:var(--turq)}
+.hero.has-hero p.lead{color:#fff;border-left-color:var(--turq)}
+.hero.has-hero .kick{color:var(--turq)}
+.hero.has-hero .byline{color:#EDE4DC}
+.hero.has-hero .btn.ghost{background:transparent;color:#fff;border-color:#fff}
+.hero.has-hero .emg-badge{background:var(--turq);color:var(--choc-d)}
+.hero.has-hero .zip-chip{background:rgba(255,255,255,.14);border-color:#fff;color:#fff}
+.hero.has-hero .sidebox{background:#fff;color:#231911}
+.hero.one .wrap{grid-template-columns:1fr}
+.hero.one .wrap>div{max-width:820px}
+.byline{font-size:13px;color:var(--gray)}
+main p+p{margin-top:14px}
+.bodycopy p{margin-bottom:14px}
+.bodycopy h2,.bodycopy h3{margin-bottom:14px}
+.twocol{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:44px;align-items:start}
+.twocol>article{min-width:0;max-width:820px}
+.sidecard{position:sticky;top:24px;align-self:start;border:1px solid var(--line);border-top:4px solid var(--turq);border-radius:4px;padding:22px;background:#fff}
+.sidecard h3{font-size:20px;margin:6px 0 10px;line-height:1.25}
+.sidecard p{font-size:14.5px;color:var(--gray);margin:0 0 14px}
+.sidecard .btn{width:100%;justify-content:center;padding:13px 18px}
+.sidecard ul{list-style:none;margin:16px 0 0;font-size:13.5px}
+.sidecard li{padding:7px 0 7px 22px;border-top:1px solid var(--line);position:relative}
+.sidecard li:before{content:"\2713";position:absolute;left:0;color:var(--turq-d);font-weight:700}
+.sidecard .sc-link{display:block;margin-top:14px;font-weight:600;color:var(--turq-d);text-decoration:none;font-size:14px}
+.twocol .prep-cards{grid-template-columns:1fr 1fr}
+.twocol .prep-card{border-bottom:1px solid var(--line)}
+.twocol .prep-card:nth-child(2n){border-right:none}
+.twocol .pullquote[style]{margin-left:0!important;margin-right:0!important}
+.localnote{border-left:4px solid var(--turq);background:#FBF7F3;padding:20px 24px;margin:30px 0 8px;border-radius:0 4px 4px 0}
+.localnote h2{font-size:24px;margin:0 0 14px}
+.srcnote{font-size:13px;color:var(--gray)}
+@media(max-width:900px){.pullquote[style]{margin-left:0!important;margin-right:0!important}.tocrow p{flex-shrink:1;max-width:100%;text-align:left}.tocrow h3{flex-shrink:1}.twocol{grid-template-columns:1fr}.sidecard{position:static}.hero.has-hero{padding:48px 0}}
+@media(max-width:520px){.tocrow p{flex-shrink:1;max-width:100%;text-align:left}.tocrow h3{flex-shrink:1}.twocol .prep-cards{grid-template-columns:1fr}.twocol .prep-card{border-right:none}}
 </style>
 
 <script type="application/ld+json">
@@ -167,9 +208,38 @@ footer .foot-links a:hover{color:var(--turq-d)}
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"Is it safe to reach into the disposal to clear a jam myself?","acceptedAnswer":{"@type":"Answer","text":"Never reach in with the power connected. Switch it off at the wall or breaker first, and use the manufacturer\u0027s Allen-wrench reset port rather than your hand if at all possible."}},
-    {"@type":"Question","name":"How long does a garbage disposal usually last?","acceptedAnswer":{"@type":"Answer","text":"Most residential units last 8 to 12 years with normal use; frequent jams or a persistent burning smell are signs it may be nearing the end of its life."}},
-    {"@type":"Question","name":"Can you install a disposal I bought myself?","acceptedAnswer":{"@type":"Answer","text":"Yes, as long as it\u0027s compatible with your sink and existing electrical setup, which we can confirm on-site."}}
+    {
+      "@type": "Question",
+      "name": "Is it safe to reach into the disposal to clear a jam myself?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Never reach in with the power connected. Switch it off at the wall or breaker first, and use the manufacturer's Allen-wrench reset port rather than your hand if at all possible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a garbage disposal usually last?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most residential units last 8 to 12 years with normal use. Frequent jams or a persistent burning smell are signs it may be nearing the end of its life."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you install a disposal I bought myself?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, as long as it's compatible with your sink and existing electrical setup, which we can confirm on-site."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my dishwasher water come up in the sink?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The dishwasher drain hose usually shares the disposal or sink drain, so a partial clog past that connection sends water back up. We clear the line and check the connection and the hose routing."
+      }
+    }
   ]
 }
 </script>
@@ -222,34 +292,26 @@ footer .foot-links a:hover{color:var(--turq-d)}
 <main id="main">
 
 
-<section class="hero"><div class="wrap">
+<section class="hero has-hero one"><img class="hero-bg" src="/images/garbage-disposal.jpg" alt="Garbage disposal unit being installed under a kitchen sink" width="1200" height="900" fetchpriority="high" decoding="async"><div class="wrap">
 <div>
 <h1>Garbage Disposal Repair &amp; Installation in Thousand Oaks, CA</h1>
 <p class="lead">A disposal that's jammed, humming without turning, leaking underneath, or just dead - we diagnose it on-site and tell you honestly whether it's a reset, a repair, or time for a new one.</p>
 <div class="cta-row"><a class="btn" href="tel:+17147508637">&#9742; Call (714) 750-8637</a><a class="btn ghost" href="/plumbing-services/">See All Services</a></div>
 </div>
-<div class="sidebox">
-<div class="sidebox-label">Talk To A Plumber</div>
-<div class="num"><a href="tel:+17147508637" style="color:inherit;text-decoration:none">(714) 750-8637</a></div>
-<ul><li>Jams, leaks, and dead units</li><li>New disposal installation</li><li>Water line reconnection</li><li>Same-day in most cases</li></ul>
-</div>
 </div></section>
 
-
-<div class="wrap img-banner"><img src="/images/garbage-disposal.jpg" alt="Garbage disposal unit being installed under a kitchen sink" loading="lazy" width="1200" height="900"></div>
-
-
-<section class="sec"><div class="wrap bodycopy">
+<section class="sec"><div class="wrap twocol">
+<article class="bodycopy">
 <h2>Repair Or Replace, Explained</h2>
 
 <h3>Humming But Not Turning</h3>
-<p>A disposal that hums but doesn't spin is usually jammed, not electrically dead - something is physically stuck against the impeller. Most units have a reset button on the underside and an Allen-wrench port for manually freeing a jam; if you're comfortable and the power is off, that's worth trying first. If it still won't turn after a reset and a manual clear, the motor itself may have failed, which typically means replacement rather than repair on most residential units.</p>
+<p>A disposal that hums but doesn't spin is usually jammed, not electrically dead - something is physically stuck against the impeller. Most units have a reset button on the underside and an Allen-wrench port for manually freeing a jam. If you're comfortable and the power is off, that's worth trying first. If it still won't turn after a reset and a manual clear, the motor itself may have failed, which typically means replacement rather than repair on most residential units.</p>
 
 <h3>Disposal Calls In Condos And Houses</h3>
 <p>Kitchens in the Hillcrest Drive condos and in Lang Ranch homes have very different sink setups, from compact single bowls to double sinks with dishwasher connections. We check the electrical connection and the drain connection on every install, because the right unit depends on the sink and the circuit and not just the horsepower.</p>
 
 <h3>Leaks Underneath The Sink</h3>
-<p>A disposal leaking water is almost always leaking from one of three points: the sink flange seal at the top, the connection to the dishwasher drain line, or a crack in the unit body itself. The first two are repairable; a cracked body means replacement. We check all three rather than assuming, since tightening a fitting won't fix a cracked housing and vice versa.</p>
+<p>A disposal leaking water is almost always leaking from one of three points: the sink flange seal at the top, the connection to the dishwasher drain line, or a crack in the unit body itself. The first two are repairable. A cracked body means replacement. We check all three rather than assuming, since tightening a fitting won't fix a cracked housing and vice versa.</p>
 
 <h3>New Installation</h3>
 <p>Installing a new disposal includes removing the old unit, fitting the new sink flange and seal, reconnecting the dishwasher drain line if applicable, and testing under load before we call it done. If you're upgrading to a higher-horsepower unit, we'll also check that your existing outlet and switch wiring actually support it rather than assuming a straight swap. Installation follows National Electrical Code (NEC) requirements for the dedicated circuit and switch wiring alongside California Plumbing Code (UPC-based) drain connection standards.</p>
@@ -265,10 +327,19 @@ footer .foot-links a:hover{color:var(--turq-d)}
 
 <h3>A Persistent Smell From The Disposal</h3>
 <p>A lingering odor even after running the unit with cold water usually means trapped food debris under the splash guard or in the grind chamber that normal use isn't clearing. Running ice cubes with a little rock salt through the disposal can dislodge some buildup, but a persistent smell that doesn't respond to that is worth a service look, since it sometimes points to a slow leak or drain-line issue behind the smell rather than just the disposal itself.</p>
-
+<h2>Disposal Backing Up Into The Other Side Of The Sink</h2>
+<p>When the disposal side of a double sink fills with water that came from the other basin or from the dishwasher, the blockage is usually past the disposal, in the shared drain or the dishwasher connection. Running the disposal harder will not fix it.</p>
+<p>We check the disposal outlet, the dishwasher drain hose connection and the trap, then clear the line beyond. If grease is the cause, we explain what to keep out of the sink so it does not return.</p>
+</article>
+<aside class="sidecard" aria-label="Call a plumber">
+<div class="kick">24/7 Emergency Line Open</div>
+<h3>Disposal Help Today</h3>
+<p>Jammed, leaking or backing up? Call and we will tell you what to check.</p>
+<a class="btn" href="tel:+17147508637">&#9742; Call (714) 750-8637</a>
+<ul><li>Flat price quoted before work starts</li><li>California CSLB C-36 licensed</li><li>Same-day service in most cases</li><li>Thousand Oaks + Ventura County</li></ul>
+<a class="sc-link" href="/drain-cleaning-and-unclogging/">Drain cleaning &rarr;</a>
+</aside>
 </div></section>
-
-
 
 <div class="pullquote"><div class="wrap"><blockquote>"Humming but not spinning is usually a jam, not a dead motor - worth a look before you assume it needs replacing."</blockquote><a class="btn choc" href="tel:+17147508637">&#9742; Call (714) 750-8637</a></div></div>
 
@@ -293,7 +364,8 @@ footer .foot-links a:hover{color:var(--turq-d)}
 <section class="sec"><div class="wrap">
 <div class="kick">Common Questions</div><h2>Before You Call, Some Answers</h2>
 <div class="faq">
-<div class="faqrow"><h3>Is it safe to reach into the disposal to clear a jam myself?</h3><p>Never reach in with the power connected. Switch it off at the wall or breaker first, and use the manufacturer's Allen-wrench reset port rather than your hand if at all possible.</p></div><div class="faqrow"><h3>How long does a garbage disposal usually last?</h3><p>Most residential units last 8 to 12 years with normal use; frequent jams or a persistent burning smell are signs it may be nearing the end of its life.</p></div><div class="faqrow"><h3>Can you install a disposal I bought myself?</h3><p>Yes, as long as it's compatible with your sink and existing electrical setup, which we can confirm on-site.</p></div>
+<div class="faqrow"><h3>Is it safe to reach into the disposal to clear a jam myself?</h3><p>Never reach in with the power connected. Switch it off at the wall or breaker first, and use the manufacturer's Allen-wrench reset port rather than your hand if at all possible.</p></div><div class="faqrow"><h3>How long does a garbage disposal usually last?</h3><p>Most residential units last 8 to 12 years with normal use. Frequent jams or a persistent burning smell are signs it may be nearing the end of its life.</p></div><div class="faqrow"><h3>Can you install a disposal I bought myself?</h3><p>Yes, as long as it's compatible with your sink and existing electrical setup, which we can confirm on-site.</p></div>
+<div class="faqrow"><h3>Why does my dishwasher water come up in the sink?</h3><p>The dishwasher drain hose usually shares the disposal or sink drain, so a partial clog past that connection sends water back up. We clear the line and check the connection and the hose routing.</p></div>
 </div></div></section>
 
 

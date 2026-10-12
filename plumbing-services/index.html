@@ -121,6 +121,7 @@ footer .foot-links a:hover{color:var(--turq-d)}
   .hamburger{display:flex}
   .sticky-cta{display:block}
   body{padding-bottom:60px}
+}
 .img-banner{margin:0 0 8px}
 .img-banner img{width:100%;height:auto;max-height:480px;object-fit:cover;display:block;border-radius:6px}
 /* Location-page emergency + ZIP components */
@@ -134,6 +135,45 @@ footer .foot-links a:hover{color:var(--turq-d)}
 .prep-card p{font-size:13.5px;color:var(--gray);margin:0}
 @media(max-width:900px){.prep-cards{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.prep-cards{grid-template-columns:1fr}.prep-card{border-right:none;border-bottom:1px solid var(--line)}}
+
+/* v11 remediation */
+.hero.has-hero{position:relative;isolation:isolate;color:#fff;padding:72px 0}
+.hero.has-hero .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero.has-hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(51,31,20,.93) 0%,rgba(51,31,20,.82) 55%,rgba(51,31,20,.6) 100%)}
+.hero.has-hero h1{color:#fff}
+.hero.has-hero h1 span{color:var(--turq)}
+.hero.has-hero p.lead{color:#fff;border-left-color:var(--turq)}
+.hero.has-hero .kick{color:var(--turq)}
+.hero.has-hero .byline{color:#EDE4DC}
+.hero.has-hero .btn.ghost{background:transparent;color:#fff;border-color:#fff}
+.hero.has-hero .emg-badge{background:var(--turq);color:var(--choc-d)}
+.hero.has-hero .zip-chip{background:rgba(255,255,255,.14);border-color:#fff;color:#fff}
+.hero.has-hero .sidebox{background:#fff;color:#231911}
+.hero.one .wrap{grid-template-columns:1fr}
+.hero.one .wrap>div{max-width:820px}
+.byline{font-size:13px;color:var(--gray)}
+main p+p{margin-top:14px}
+.bodycopy p{margin-bottom:14px}
+.bodycopy h2,.bodycopy h3{margin-bottom:14px}
+.twocol{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:44px;align-items:start}
+.twocol>article{min-width:0;max-width:820px}
+.sidecard{position:sticky;top:24px;align-self:start;border:1px solid var(--line);border-top:4px solid var(--turq);border-radius:4px;padding:22px;background:#fff}
+.sidecard h3{font-size:20px;margin:6px 0 10px;line-height:1.25}
+.sidecard p{font-size:14.5px;color:var(--gray);margin:0 0 14px}
+.sidecard .btn{width:100%;justify-content:center;padding:13px 18px}
+.sidecard ul{list-style:none;margin:16px 0 0;font-size:13.5px}
+.sidecard li{padding:7px 0 7px 22px;border-top:1px solid var(--line);position:relative}
+.sidecard li:before{content:"\2713";position:absolute;left:0;color:var(--turq-d);font-weight:700}
+.sidecard .sc-link{display:block;margin-top:14px;font-weight:600;color:var(--turq-d);text-decoration:none;font-size:14px}
+.twocol .prep-cards{grid-template-columns:1fr 1fr}
+.twocol .prep-card{border-bottom:1px solid var(--line)}
+.twocol .prep-card:nth-child(2n){border-right:none}
+.twocol .pullquote[style]{margin-left:0!important;margin-right:0!important}
+.localnote{border-left:4px solid var(--turq);background:#FBF7F3;padding:20px 24px;margin:30px 0 8px;border-radius:0 4px 4px 0}
+.localnote h2{font-size:24px;margin:0 0 14px}
+.srcnote{font-size:13px;color:var(--gray)}
+@media(max-width:900px){.pullquote[style]{margin-left:0!important;margin-right:0!important}.tocrow p{flex-shrink:1;max-width:100%;text-align:left}.tocrow h3{flex-shrink:1}.twocol{grid-template-columns:1fr}.sidecard{position:static}.hero.has-hero{padding:48px 0}}
+@media(max-width:520px){.tocrow p{flex-shrink:1;max-width:100%;text-align:left}.tocrow h3{flex-shrink:1}.twocol .prep-cards{grid-template-columns:1fr}.twocol .prep-card{border-right:none}}
 </style>
 
 <script type="application/ld+json">
@@ -207,6 +247,12 @@ footer .foot-links a:hover{color:var(--turq-d)}
 </div></section>
 
 <section class="sec"><div class="wrap bodycopy">
+<h2>Emergency Plumbing Services, Open 24/7</h2>
+<p>Several of the services below are emergency services. If water is spreading, a drain is backing up or the water heater has failed, call our 24/7 emergency line at <a href="tel:+17147508637">(714) 750-8637</a> and we will dispatch as soon as we can.</p>
+<div class="areas"><a href="/leak-detection/">Emergency Leak Detection</a><a href="/slab-leak-detection-and-repair/">Emergency Slab Leak Detection & Repair</a><a href="/sewer-line-repair/">Emergency Sewer Line Repair & Backup Service</a><a href="/drain-cleaning-and-unclogging/">Emergency Drain Cleaning & Unclogging</a><a href="/water-heater-repair/">Emergency Water Heater Repair</a><a href="/water-heater-installation-and-replacement/">Emergency Water Heater Replacement & Installation</a><a href="/sump-pump-repair-and-installation/">Emergency Sump Pump Repair & Installation</a><a href="/toilet-repair-and-installation/">Emergency Toilet Repair & Installation</a><a href="/faucet-and-sink-repair/">Emergency Faucet, Valve & Sink Repair</a></div>
+</div></section>
+
+<section class="sec"><div class="wrap bodycopy">
 <h2>How We Organize This List</h2>
 <p>The services below cover the calls we handle most, from the routine (a running toilet, a slow drain) through to the diagnostic-heavy work (leak detection, sewer camera inspections, slab leak repair) where finding the actual cause matters more than the fix itself. Every page links through to real pricing ranges, what the job actually involves, and answers to the questions we hear most often about that specific issue.</p>
 <p>If your issue doesn't map cleanly onto one of these - or you're just not sure which one applies - call directly rather than guessing from a list. We'll ask a few quick questions and point you to the right service, or just dispatch a technician who can diagnose it properly on-site.</p>
@@ -218,9 +264,9 @@ footer .foot-links a:hover{color:var(--turq-d)}
 <div class="kick">Full List</div><h2>All Plumbing Services</h2>
 <div class="toc">
 
-<div class="tocrow"><span class="tnum">01</span><h3><a href="/water-damage-restoration/" style="color:inherit;text-decoration:none">Water Damage Restoration in Thousand Oaks, CA</a></h3><span class="dots"></span><p>Standing water, a soaked ceiling, or a musty smell after a leak needs a fast, structured response, not guesswork. We extract water, dry the structure, and stop mold before it starts.</p></div>
+<div class="tocrow"><span class="tnum">01</span><h3><a href="/water-damage-restoration/" style="color:inherit;text-decoration:none">Emergency Water Damage Restoration in Thousand Oaks, CA</a></h3><span class="dots"></span><p>Standing water, a soaked ceiling, or a musty smell after a leak needs a fast, structured response, not guesswork. We extract water, dry the structure, and stop mold before it starts.</p></div>
 
-<div class="tocrow"><span class="tnum">02</span><h3><a href="/water-heater-installation-and-replacement/" style="color:inherit;text-decoration:none">Water Heater Installation &amp; Replacement in Thousand Oaks, CA</a></h3><span class="dots"></span><p>A water heater rarely fails at a convenient time. We install and replace tank and tankless units, same-day in most cases, with a flat price agreed before we start.</p></div>
+<div class="tocrow"><span class="tnum">02</span><h3><a href="/water-heater-installation-and-replacement/" style="color:inherit;text-decoration:none">Emergency Water Heater Replacement &amp; Installation in Thousand Oaks, CA</a></h3><span class="dots"></span><p>A water heater rarely fails at a convenient time. We install and replace tank and tankless units, same-day in most cases, with a flat price agreed before we start.</p></div>
 
 <div class="tocrow"><span class="tnum">03</span><h3><a href="/tankless-water-heater-service/" style="color:inherit;text-decoration:none">Tankless Water Heater Service in Thousand Oaks, CA</a></h3><span class="dots"></span><p>Tankless units need periodic descaling and occasional repair, not just installation. We service every major brand and can usually tell you over the phone whether it's a flush, a part, or a full unit issue.</p></div>
 
@@ -228,24 +274,24 @@ footer .foot-links a:hover{color:var(--turq-d)}
 
 <div class="tocrow"><span class="tnum">05</span><h3><a href="/water-heater-repair/" style="color:inherit;text-decoration:none">Emergency Water Heater Repair in Thousand Oaks, CA</a></h3><span class="dots"></span><p>No hot water, a puddle at the base of the tank, or a pilot light that won't stay lit - we diagnose the actual cause before quoting anything, and tell you honestly if replacement makes more sense.</p></div>
 
-<div class="tocrow"><span class="tnum">06</span><h3><a href="/drain-cleaning-and-unclogging/" style="color:inherit;text-decoration:none">Drain Cleaning &amp; Unclogging in Thousand Oaks, CA</a></h3><span class="dots"></span><p>A slow or backed-up drain rarely clears itself. We snake, jet, and camera-inspect kitchen, bath, and main-line clogs, and tell you what actually caused it.</p></div>
+<div class="tocrow"><span class="tnum">06</span><h3><a href="/drain-cleaning-and-unclogging/" style="color:inherit;text-decoration:none">Emergency Drain Cleaning &amp; Unclogging in Thousand Oaks, CA</a></h3><span class="dots"></span><p>A slow or backed-up drain rarely clears itself. We snake, jet, and camera-inspect kitchen, bath, and main-line clogs, and tell you what actually caused it.</p></div>
 
-<div class="tocrow"><span class="tnum">07</span><h3><a href="/leak-detection/" style="color:inherit;text-decoration:none">Leak Detection in Thousand Oaks, CA</a></h3><span class="dots"></span><p>A water bill that jumped for no visible reason, a damp spot that never quite dries, a meter that keeps spinning with everything off - we find the actual source before anyone opens a wall or a slab.</p></div>
+<div class="tocrow"><span class="tnum">07</span><h3><a href="/leak-detection/" style="color:inherit;text-decoration:none">Emergency Leak Detection in Thousand Oaks, CA</a></h3><span class="dots"></span><p>A water bill that jumped for no visible reason, a damp spot that never quite dries, a meter that keeps spinning with everything off - we find the actual source before anyone opens a wall or a slab.</p></div>
 
-<div class="tocrow"><span class="tnum">08</span><h3><a href="/sewer-line-repair/" style="color:inherit;text-decoration:none">Sewer Line Repair in Thousand Oaks, CA</a></h3><span class="dots"></span><p>A sewer line that backs up repeatedly, or a camera inspection that turns up root intrusion or a cracked section, needs a repair scoped to the actual damage - not a default full-line replacement.</p></div>
+<div class="tocrow"><span class="tnum">08</span><h3><a href="/sewer-line-repair/" style="color:inherit;text-decoration:none">Emergency Sewer Line Repair &amp; Backup Service in Thousand Oaks, CA</a></h3><span class="dots"></span><p>A sewer line that backs up repeatedly, or a camera inspection that turns up root intrusion or a cracked section, needs a repair scoped to the actual damage - not a default full-line replacement.</p></div>
 
-<div class="tocrow"><span class="tnum">09</span><h3><a href="/slab-leak-detection-and-repair/" style="color:inherit;text-decoration:none">Slab Leak Detection & Repair in Thousand Oaks, CA</a></h3><span class="dots"></span><p>Water coming up under your floorboards, a warm patch on the slab, or a spike in your water bill with no visible cause - a slab leak needs to be located precisely before any concrete comes up.</p></div>
+<div class="tocrow"><span class="tnum">09</span><h3><a href="/slab-leak-detection-and-repair/" style="color:inherit;text-decoration:none">Emergency Slab Leak Detection &amp; Repair in Thousand Oaks, CA</a></h3><span class="dots"></span><p>Water coming up under your floorboards, a warm patch on the slab, or a spike in your water bill with no visible cause - a slab leak needs to be located precisely before any concrete comes up.</p></div>
 
-<div class="tocrow"><span class="tnum">10</span><h3><a href="/toilet-repair-and-installation/" style="color:inherit;text-decoration:none">Toilet Repair &amp; Installation in Thousand Oaks, CA</a></h3><span class="dots"></span><p>A running toilet, a stubborn clog, water at the base, or a full replacement - we diagnose the actual issue and quote a flat price before starting.</p></div>
+<div class="tocrow"><span class="tnum">10</span><h3><a href="/toilet-repair-and-installation/" style="color:inherit;text-decoration:none">Emergency Toilet Repair &amp; Installation in Thousand Oaks, CA</a></h3><span class="dots"></span><p>A running toilet, a stubborn clog, water at the base, or a full replacement - we diagnose the actual issue and quote a flat price before starting.</p></div>
 
-<div class="tocrow"><span class="tnum">11</span><h3><a href="/faucet-and-sink-repair/" style="color:inherit;text-decoration:none">Faucet &amp; Sink Repair in Thousand Oaks, CA</a></h3><span class="dots"></span><p>A dripping faucet, a stuck or leaking valve, or a sink that needs reconnecting after an appliance install - small jobs that are worth getting right the first time.</p></div>
+<div class="tocrow"><span class="tnum">11</span><h3><a href="/faucet-and-sink-repair/" style="color:inherit;text-decoration:none">Emergency Faucet, Valve &amp; Sink Repair in Thousand Oaks, CA</a></h3><span class="dots"></span><p>A dripping faucet, a stuck or leaking valve, or a sink that needs reconnecting after an appliance install - small jobs that are worth getting right the first time.</p></div>
 
 <div class="tocrow"><span class="tnum">12</span><h3><a href="/garbage-disposal-repair-and-installation/" style="color:inherit;text-decoration:none">Garbage Disposal Repair &amp; Installation in Thousand Oaks, CA</a></h3><span class="dots"></span><p>A disposal that's jammed, humming without turning, leaking underneath, or just dead - we diagnose it on-site and tell you honestly whether it's a reset, a repair, or time for a new one.</p></div>
 
 <div class="tocrow"><span class="tnum">13</span><h3><a href="/water-softener-and-filtration-installation/" style="color:inherit;text-decoration:none">Water Softener &amp; Filtration Installation in Thousand Oaks, CA</a></h3><span class="dots"></span><p>Scale buildup on fixtures, a system that's stopped regenerating properly, or tap water that just doesn't taste right - we install and service softener and filtration systems built for what's actually in your water.</p></div>
 
 <div class="tocrow"><span class="tnum">14</span><h3><a href="/pool-leak-detection-and-repair/" style="color:inherit;text-decoration:none">Pool Leak Detection &amp; Repair in Thousand Oaks, CA</a></h3><span class="dots"></span><p>A pool that's losing more water than evaporation explains needs a real diagnostic, not a guess and a patch - we find the source in the shell, plumbing, or equipment pad before recommending a fix.</p></div>
-<div class="tocrow"><span class="tnum">15</span><h3><a href="/sump-pump-repair-and-installation/" style="color:inherit;text-decoration:none">Sump Pump Repair &amp; Installation in Thousand Oaks, CA</a></h3><span class="dots"></span><p>A sump pump that won't start, runs without stopping, or has quit moving water needs a quick and honest diagnosis. We repair, replace, and add battery backup to sump and sewage ejector pumps across Thousand Oaks.</p></div>
+<div class="tocrow"><span class="tnum">15</span><h3><a href="/sump-pump-repair-and-installation/" style="color:inherit;text-decoration:none">Emergency Sump Pump Repair &amp; Installation in Thousand Oaks, CA</a></h3><span class="dots"></span><p>A sump pump that won't start, runs without stopping, or has quit moving water needs a quick and honest diagnosis. We repair, replace, and add battery backup to sump and sewage ejector pumps across Thousand Oaks.</p></div>
 
 </div>
 </div></section>

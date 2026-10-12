@@ -22,6 +22,7 @@
 <meta property="og:image" content="https://proplumbingthousandoaks.com/android-chrome-512x512.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://proplumbingthousandoaks.com/android-chrome-512x512.png">
+<link rel="preload" as="image" href="/images/moorpark-landmark.jpg" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--choc:#4A2E1E;--choc-d:#331F14;--turq:#1FC8C8;--turq-d:#17A2A2;--gray:#5C554E;--line:#EDE4DC;--bg:#FFFFFF}
@@ -121,6 +122,7 @@ footer .foot-links a:hover{color:var(--turq-d)}
   .hamburger{display:flex}
   .sticky-cta{display:block}
   body{padding-bottom:60px}
+}
 .img-banner{margin:0 0 8px}
 .img-banner img{width:100%;height:auto;max-height:480px;object-fit:cover;display:block;border-radius:6px}
 /* Location-page emergency + ZIP components */
@@ -134,6 +136,45 @@ footer .foot-links a:hover{color:var(--turq-d)}
 .prep-card p{font-size:13.5px;color:var(--gray);margin:0}
 @media(max-width:900px){.prep-cards{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.prep-cards{grid-template-columns:1fr}.prep-card{border-right:none;border-bottom:1px solid var(--line)}}
+
+/* v11 remediation */
+.hero.has-hero{position:relative;isolation:isolate;color:#fff;padding:72px 0}
+.hero.has-hero .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero.has-hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(51,31,20,.93) 0%,rgba(51,31,20,.82) 55%,rgba(51,31,20,.6) 100%)}
+.hero.has-hero h1{color:#fff}
+.hero.has-hero h1 span{color:var(--turq)}
+.hero.has-hero p.lead{color:#fff;border-left-color:var(--turq)}
+.hero.has-hero .kick{color:var(--turq)}
+.hero.has-hero .byline{color:#EDE4DC}
+.hero.has-hero .btn.ghost{background:transparent;color:#fff;border-color:#fff}
+.hero.has-hero .emg-badge{background:var(--turq);color:var(--choc-d)}
+.hero.has-hero .zip-chip{background:rgba(255,255,255,.14);border-color:#fff;color:#fff}
+.hero.has-hero .sidebox{background:#fff;color:#231911}
+.hero.one .wrap{grid-template-columns:1fr}
+.hero.one .wrap>div{max-width:820px}
+.byline{font-size:13px;color:var(--gray)}
+main p+p{margin-top:14px}
+.bodycopy p{margin-bottom:14px}
+.bodycopy h2,.bodycopy h3{margin-bottom:14px}
+.twocol{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:44px;align-items:start}
+.twocol>article{min-width:0;max-width:820px}
+.sidecard{position:sticky;top:24px;align-self:start;border:1px solid var(--line);border-top:4px solid var(--turq);border-radius:4px;padding:22px;background:#fff}
+.sidecard h3{font-size:20px;margin:6px 0 10px;line-height:1.25}
+.sidecard p{font-size:14.5px;color:var(--gray);margin:0 0 14px}
+.sidecard .btn{width:100%;justify-content:center;padding:13px 18px}
+.sidecard ul{list-style:none;margin:16px 0 0;font-size:13.5px}
+.sidecard li{padding:7px 0 7px 22px;border-top:1px solid var(--line);position:relative}
+.sidecard li:before{content:"\2713";position:absolute;left:0;color:var(--turq-d);font-weight:700}
+.sidecard .sc-link{display:block;margin-top:14px;font-weight:600;color:var(--turq-d);text-decoration:none;font-size:14px}
+.twocol .prep-cards{grid-template-columns:1fr 1fr}
+.twocol .prep-card{border-bottom:1px solid var(--line)}
+.twocol .prep-card:nth-child(2n){border-right:none}
+.twocol .pullquote[style]{margin-left:0!important;margin-right:0!important}
+.localnote{border-left:4px solid var(--turq);background:#FBF7F3;padding:20px 24px;margin:30px 0 8px;border-radius:0 4px 4px 0}
+.localnote h2{font-size:24px;margin:0 0 14px}
+.srcnote{font-size:13px;color:var(--gray)}
+@media(max-width:900px){.pullquote[style]{margin-left:0!important;margin-right:0!important}.tocrow p{flex-shrink:1;max-width:100%;text-align:left}.tocrow h3{flex-shrink:1}.twocol{grid-template-columns:1fr}.sidecard{position:static}.hero.has-hero{padding:48px 0}}
+@media(max-width:520px){.tocrow p{flex-shrink:1;max-width:100%;text-align:left}.tocrow h3{flex-shrink:1}.twocol .prep-cards{grid-template-columns:1fr}.twocol .prep-card{border-right:none}}
 </style>
 
 <script type="application/ld+json">
@@ -272,7 +313,7 @@ footer .foot-links a:hover{color:var(--turq-d)}
 
 <main id="main">
 
-<section class="hero"><div class="wrap">
+<section class="hero has-hero one"><img class="hero-bg" src="/images/moorpark-landmark.jpg" alt="Moorpark Metrolink station platform in downtown Moorpark, CA" width="1600" height="900" fetchpriority="high" decoding="async"><div class="wrap">
 <div>
 <div class="emg-badge">24/7 Emergency Line Open</div>
 <h1>Emergency Plumber Moorpark CA Near Thousand Oaks</h1>
@@ -280,17 +321,10 @@ footer .foot-links a:hover{color:var(--turq-d)}
 <div class="cta-row"><a class="btn" href="tel:+17147508637">&#9742; Call (714) 750-8637</a></div>
 <div class="zips"><span class="zip-chip">93021</span></div>
 </div>
-<div class="sidebox">
-<div class="sidebox-label">24/7 Emergency Line Open</div>
-<div class="num"><a href="tel:+17147508637" style="color:inherit;text-decoration:none">(714) 750-8637</a></div>
-<ul><li>Around-the-clock emergency dispatch to Moorpark</li><li>California CSLB C-36 licensed plumbing contractors</li></ul>
-</div>
 </div></section>
 
-<div class="wrap img-banner"><img src="/images/moorpark-landmark.jpg" alt="Moorpark Metrolink station platform in downtown Moorpark, CA" loading="lazy" width="1600" height="900"></div>
-
-
-<section class="sec"><div class="wrap bodycopy">
+<section class="sec"><div class="wrap twocol">
+<article class="bodycopy">
 <h2>Plumbing Help In Moorpark</h2>
 
 <p>Moorpark is a Ventura County city of roughly 36,000 residents, reached from Thousand Oaks on Highway 23. It grew from a flat valley floor out into the surrounding hills, and the plumbing in each stage of that growth reflects the era it was built in.</p>
@@ -309,10 +343,6 @@ footer .foot-links a:hover{color:var(--turq-d)}
 
 <h3>Why Moorpark Gets Its Own Page</h3>
 <p>Moorpark is its own city with its own character, not just another street in Thousand Oaks. The Tierra Rejada corridor, the college area, and the hillside subdivisions each have different housing, so we treat it as its own market instead of assuming a Thousand Oaks answer applies.</p>
-
-</div></section>
-
-<section class="sec"><div class="wrap bodycopy">
 <h2>Burst Pipe Or Active Leak In Moorpark? Start Here</h2>
 <p>An active leak or burst pipe is a genuine plumbing emergency. Here's what to do before help arrives, and how to reach us.</p>
 <div class="prep-cards">
@@ -321,6 +351,15 @@ footer .foot-links a:hover{color:var(--turq-d)}
 <div class="prep-card"><b>Clear The Area</b><p>Move people, pets, and belongings away from standing water or an active leak.</p></div>
 <div class="prep-card"><b>Call Our 24/7 Line</b><p>Call <a href="tel:+17147508637" style="color:var(--turq-d);font-weight:600;text-decoration:none">(714) 750-8637</a> and we'll dispatch a technician to Moorpark right away.</p></div>
 </div>
+</article>
+<aside class="sidecard" aria-label="Call a plumber">
+<div class="kick">24/7 Emergency Line Open</div>
+<h3>Plumber In Moorpark Today</h3>
+<p>Burst pipe, backup or no hot water? Call now and we dispatch to Moorpark.</p>
+<a class="btn" href="tel:+17147508637">&#9742; Call (714) 750-8637</a>
+<ul><li>Flat price quoted before work starts</li><li>California CSLB C-36 licensed</li><li>Same-day service in most cases</li><li>Moorpark + Ventura County</li></ul>
+<a class="sc-link" href="/plumbing-services/">All plumbing services &rarr;</a>
+</aside>
 </div></section>
 
 <div class="pullquote"><div class="wrap"><blockquote>Hillside subdivision or a small-lot street near the college, the diagnosis starts with the house in front of us.</blockquote><a class="btn choc" href="tel:+17147508637">&#9742; Call (714) 750-8637</a></div></div>

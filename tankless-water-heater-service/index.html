@@ -22,6 +22,7 @@
 <meta property="og:image" content="https://proplumbingthousandoaks.com/android-chrome-512x512.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://proplumbingthousandoaks.com/android-chrome-512x512.png">
+<link rel="preload" as="image" href="/images/tankless-water-heater.jpg" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--choc:#4A2E1E;--choc-d:#331F14;--turq:#1FC8C8;--turq-d:#17A2A2;--gray:#5C554E;--line:#EDE4DC;--bg:#FFFFFF}
@@ -121,6 +122,7 @@ footer .foot-links a:hover{color:var(--turq-d)}
   .hamburger{display:flex}
   .sticky-cta{display:block}
   body{padding-bottom:60px}
+}
 .img-banner{margin:0 0 8px}
 .img-banner img{width:100%;height:auto;max-height:480px;object-fit:cover;display:block;border-radius:6px}
 /* Location-page emergency + ZIP components */
@@ -134,6 +136,45 @@ footer .foot-links a:hover{color:var(--turq-d)}
 .prep-card p{font-size:13.5px;color:var(--gray);margin:0}
 @media(max-width:900px){.prep-cards{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.prep-cards{grid-template-columns:1fr}.prep-card{border-right:none;border-bottom:1px solid var(--line)}}
+
+/* v11 remediation */
+.hero.has-hero{position:relative;isolation:isolate;color:#fff;padding:72px 0}
+.hero.has-hero .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero.has-hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(51,31,20,.93) 0%,rgba(51,31,20,.82) 55%,rgba(51,31,20,.6) 100%)}
+.hero.has-hero h1{color:#fff}
+.hero.has-hero h1 span{color:var(--turq)}
+.hero.has-hero p.lead{color:#fff;border-left-color:var(--turq)}
+.hero.has-hero .kick{color:var(--turq)}
+.hero.has-hero .byline{color:#EDE4DC}
+.hero.has-hero .btn.ghost{background:transparent;color:#fff;border-color:#fff}
+.hero.has-hero .emg-badge{background:var(--turq);color:var(--choc-d)}
+.hero.has-hero .zip-chip{background:rgba(255,255,255,.14);border-color:#fff;color:#fff}
+.hero.has-hero .sidebox{background:#fff;color:#231911}
+.hero.one .wrap{grid-template-columns:1fr}
+.hero.one .wrap>div{max-width:820px}
+.byline{font-size:13px;color:var(--gray)}
+main p+p{margin-top:14px}
+.bodycopy p{margin-bottom:14px}
+.bodycopy h2,.bodycopy h3{margin-bottom:14px}
+.twocol{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:44px;align-items:start}
+.twocol>article{min-width:0;max-width:820px}
+.sidecard{position:sticky;top:24px;align-self:start;border:1px solid var(--line);border-top:4px solid var(--turq);border-radius:4px;padding:22px;background:#fff}
+.sidecard h3{font-size:20px;margin:6px 0 10px;line-height:1.25}
+.sidecard p{font-size:14.5px;color:var(--gray);margin:0 0 14px}
+.sidecard .btn{width:100%;justify-content:center;padding:13px 18px}
+.sidecard ul{list-style:none;margin:16px 0 0;font-size:13.5px}
+.sidecard li{padding:7px 0 7px 22px;border-top:1px solid var(--line);position:relative}
+.sidecard li:before{content:"\2713";position:absolute;left:0;color:var(--turq-d);font-weight:700}
+.sidecard .sc-link{display:block;margin-top:14px;font-weight:600;color:var(--turq-d);text-decoration:none;font-size:14px}
+.twocol .prep-cards{grid-template-columns:1fr 1fr}
+.twocol .prep-card{border-bottom:1px solid var(--line)}
+.twocol .prep-card:nth-child(2n){border-right:none}
+.twocol .pullquote[style]{margin-left:0!important;margin-right:0!important}
+.localnote{border-left:4px solid var(--turq);background:#FBF7F3;padding:20px 24px;margin:30px 0 8px;border-radius:0 4px 4px 0}
+.localnote h2{font-size:24px;margin:0 0 14px}
+.srcnote{font-size:13px;color:var(--gray)}
+@media(max-width:900px){.pullquote[style]{margin-left:0!important;margin-right:0!important}.tocrow p{flex-shrink:1;max-width:100%;text-align:left}.tocrow h3{flex-shrink:1}.twocol{grid-template-columns:1fr}.sidecard{position:static}.hero.has-hero{padding:48px 0}}
+@media(max-width:520px){.tocrow p{flex-shrink:1;max-width:100%;text-align:left}.tocrow h3{flex-shrink:1}.twocol .prep-cards{grid-template-columns:1fr}.twocol .prep-card{border-right:none}}
 </style>
 
 <script type="application/ld+json">
@@ -167,9 +208,30 @@ footer .foot-links a:hover{color:var(--turq-d)}
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"How often should a tankless unit be flushed?","acceptedAnswer":{"@type":"Answer","text":"Most manufacturers recommend annual descaling; homes on harder water or heavy daily use may need it more often."}},
-    {"@type":"Question","name":"What does an error code usually mean?","acceptedAnswer":{"@type":"Answer","text":"It depends on the code and brand, but scale buildup, venting blockage, and low inlet flow are the most common causes we see - we\u0027ll read the specific code on-site before quoting anything."}},
-    {"@type":"Question","name":"Can you service a brand you didn\u0027t install?","acceptedAnswer":{"@type":"Answer","text":"Yes, we service all major tankless brands regardless of who installed the unit."}}
+    {
+      "@type": "Question",
+      "name": "How often should a tankless unit be flushed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most manufacturers recommend annual descaling. Homes on harder water or heavy daily use may need it more often."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does an error code usually mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the code and brand, but scale buildup, venting blockage, and low inlet flow are the most common causes we see - we'll read the specific code on-site before quoting anything."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you service a brand you didn't install?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we service all major tankless brands regardless of who installed the unit."
+      }
+    }
   ]
 }
 </script>
@@ -222,50 +284,54 @@ footer .foot-links a:hover{color:var(--turq-d)}
 <main id="main">
 
 
-<section class="hero"><div class="wrap">
+<section class="hero has-hero one"><img class="hero-bg" src="/images/tankless-water-heater.jpg" alt="Wall-mounted tankless water heater unit" width="1200" height="900" fetchpriority="high" decoding="async"><div class="wrap">
 <div>
 <h1>Tankless Water Heater Service in Thousand Oaks, CA</h1>
 <p class="lead">Tankless units need periodic descaling and occasional repair, not just installation. We service every major brand and can usually tell you over the phone whether it's a flush, a part, or a full unit issue.</p>
 <div class="cta-row"><a class="btn" href="tel:+17147508637">&#9742; Call (714) 750-8637</a><a class="btn ghost" href="/plumbing-services/">See All Services</a></div>
 </div>
-<div class="sidebox">
-<div class="sidebox-label">Talk To A Plumber</div>
-<div class="num"><a href="tel:+17147508637" style="color:inherit;text-decoration:none">(714) 750-8637</a></div>
-<ul><li>Descale/flush service</li><li>Error-code diagnosis</li><li>Repair or replace, honestly</li><li>Rinnai, Navien, Rheem, more</li></ul>
-</div>
 </div></section>
 
-
-<div class="wrap img-banner"><img src="/images/tankless-water-heater.jpg" alt="Wall-mounted tankless water heater unit" loading="lazy" width="1200" height="900"></div>
-
-
-<section class="sec"><div class="wrap bodycopy">
+<section class="sec"><div class="wrap twocol">
+<article class="bodycopy">
 <h2>What You Need To Know</h2>
 
 <h3>Why Tankless Units Need Service That Tank Heaters Don't</h3>
-<p>A tankless water heater's heat exchanger runs mineral-heavy water through narrow passages every time hot water is drawn. In much of Conejo Valley, tap water carries enough hardness that scale buildup inside that exchanger is normal wear, not a defect - and it's the single most common reason a tankless unit starts delivering lukewarm water, throws an error code, or shows reduced flow a few years in. A descale flush, using a pump and a vinegar or manufacturer-approved descaling solution circulated through the unit per the manufacturer's service guidelines, clears that buildup and is genuinely the fix in most cases we see, not a full replacement.</p><p>We hear a version of the same call often: someone who bought a tankless unit expecting to never think about it again, then got an error code out of nowhere. Most of the time the fix is a flush, not a new unit, and we'll tell you that honestly rather than upselling a replacement you don't need yet.</p>
+<p>A tankless water heater's heat exchanger runs mineral-heavy water through narrow passages every time hot water is drawn. In much of Conejo Valley, tap water carries enough hardness that scale buildup inside that exchanger is normal wear, not a defect - and it's the single most common reason a tankless unit starts delivering lukewarm water, throws an error code, or shows reduced flow a few years in.</p>
+<p>A descale flush, using a pump and a vinegar or manufacturer-approved descaling solution circulated through the unit per the manufacturer's service guidelines, clears that buildup and is genuinely the fix in most cases we see, not a full replacement.</p><p>We hear a version of the same call often: someone who bought a tankless unit expecting to never think about it again, then got an error code out of nowhere. Most of the time the fix is a flush, not a new unit, and we'll tell you that honestly rather than upselling a replacement you don't need yet.</p>
 
 <h3>Neighborhoods Where Tankless Makes Sense</h3>
 <p>Larger homes in Conejo Oaks, known for big lots and custom builds, and in the gated North Ranch communities on the Westlake side often have several bathrooms running at once, which is exactly where a correctly sized tankless system helps. Newer Dos Vientos Ranch homes in Newbury Park usually offer an easier path for venting and gas sizing than older houses in places like Lynn Ranch.</p>
 
 <h3>What We Check On A Service Call</h3>
-<p>A service visit includes reading and explaining any error code the unit is displaying, checking inlet water pressure and flow rate, inspecting the venting for blockage, and performing a full descale flush if it's due (typically annually, more often with harder water or heavy household use). If the issue turns out to be a failed component - an igniter, a flow sensor, a circuit board - we'll price the repair against a straight replacement so you can compare honestly rather than defaulting to whichever is more profitable for us.</p>
+<p>A service visit includes reading and explaining any error code the unit is displaying, checking inlet water pressure and flow rate, inspecting the venting for blockage, and performing a full descale flush if it's due (typically annually, more often with harder water or heavy household use).</p>
+<p>If the issue turns out to be a failed component - an igniter, a flow sensor, a circuit board - we'll price the repair against a straight replacement so you can compare honestly rather than defaulting to whichever is more profitable for us.</p>
 
 <h3>New Installs</h3>
 <p>If you're installing a tankless unit for the first time, sizing and venting matter more than with a tank system - an undersized unit will bottleneck simultaneous hot water draws, and venting has to meet the manufacturer's exact spec, not just a general code minimum. We size to your actual household and handle the full install, including any gas line or electrical work the new unit requires.</p>
 
 <h3>Extending The Life Of A Tankless Unit</h3>
-<p>Beyond annual descaling, a tankless unit lasts longest when the inlet water filter (most units have one) is checked periodically and when the unit isn't asked to run well past its rated flow rate for the fixture count it's serving. If you've added bathrooms or fixtures since the unit was installed, that's worth mentioning when you call - a unit that was correctly sized for a 2-bath house can genuinely struggle once a third bathroom or a large soaking tub gets added.</p>
+<p>Beyond annual descaling, a tankless unit lasts longest when the inlet water filter (most units have one) is checked periodically and when the unit isn't asked to run well past its rated flow rate for the fixture count it's serving.</p>
+<p>If you've added bathrooms or fixtures since the unit was installed, that's worth mentioning when you call - a unit that was correctly sized for a 2-bath house can genuinely struggle once a third bathroom or a large soaking tub gets added.</p>
 
 <h3>Warranty Considerations</h3>
 <p>Most manufacturer warranties on tankless units require documented annual maintenance to stay valid, and a skipped flush is one of the more common reasons a warranty claim gets denied down the line. We provide a dated service record after every visit specifically so you have that documentation if you ever need it.</p>
 
 <h3>Retrofitting An Older Home</h3>
 <p>Installing a tankless unit in a home that was built around a tank system sometimes means upsizing the gas line, adding a dedicated electrical circuit for the ignition system, or running new venting through an exterior wall - none of that is unusual, but it does change the cost and timeline compared to a straight swap. We assess the existing infrastructure during the quote, not after we've already started, so there's no surprise mid-install change order.</p>
-
+<h2>What A Flush And Descale Visit Involves</h2>
+<p>A flush visit circulates a descaling solution through the heat exchanger with the unit isolated from the household supply, then rinses it clear. We also clean the inlet filter, review the error history and confirm that the unit is firing and venting correctly.</p>
+<p>Descaling intervals vary by manufacturer and by your water, so check your unit's manual. If your unit shows a recurring error code, mention when the last flush happened, because scale is a common cause of overheating and low-flow faults.</p>
+</article>
+<aside class="sidecard" aria-label="Call a plumber">
+<div class="kick">24/7 Emergency Line Open</div>
+<h3>Tankless Service Help Today</h3>
+<p>Error code or cold water? Tell us the model and we will plan the visit.</p>
+<a class="btn" href="tel:+17147508637">&#9742; Call (714) 750-8637</a>
+<ul><li>Flat price quoted before work starts</li><li>California CSLB C-36 licensed</li><li>Same-day service in most cases</li><li>Thousand Oaks + Ventura County</li></ul>
+<a class="sc-link" href="/water-heater-repair/">Water heater repair &rarr;</a>
+</aside>
 </div></section>
-
-
 
 <div class="pullquote"><div class="wrap"><blockquote>"Lukewarm water and an error code isn't always a new unit. Often it's a flush."</blockquote><a class="btn choc" href="tel:+17147508637">&#9742; Call (714) 750-8637</a></div></div>
 
@@ -290,7 +356,7 @@ footer .foot-links a:hover{color:var(--turq-d)}
 <section class="sec"><div class="wrap">
 <div class="kick">Common Questions</div><h2>Frequently Asked Questions</h2>
 <div class="faq">
-<div class="faqrow"><h3>How often should a tankless unit be flushed?</h3><p>Most manufacturers recommend annual descaling; homes on harder water or heavy daily use may need it more often.</p></div><div class="faqrow"><h3>What does an error code usually mean?</h3><p>It depends on the code and brand, but scale buildup, venting blockage, and low inlet flow are the most common causes we see - we'll read the specific code on-site before quoting anything.</p></div><div class="faqrow"><h3>Can you service a brand you didn't install?</h3><p>Yes, we service all major tankless brands regardless of who installed the unit.</p></div>
+<div class="faqrow"><h3>How often should a tankless unit be flushed?</h3><p>Most manufacturers recommend annual descaling. Homes on harder water or heavy daily use may need it more often.</p></div><div class="faqrow"><h3>What does an error code usually mean?</h3><p>It depends on the code and brand, but scale buildup, venting blockage, and low inlet flow are the most common causes we see - we'll read the specific code on-site before quoting anything.</p></div><div class="faqrow"><h3>Can you service a brand you didn't install?</h3><p>Yes, we service all major tankless brands regardless of who installed the unit.</p></div>
 </div></div></section>
 
 

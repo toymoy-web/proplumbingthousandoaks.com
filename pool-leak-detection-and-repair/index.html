@@ -22,6 +22,7 @@
 <meta property="og:image" content="https://proplumbingthousandoaks.com/android-chrome-512x512.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://proplumbingthousandoaks.com/android-chrome-512x512.png">
+<link rel="preload" as="image" href="/images/pool-leak-detection.jpg" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--choc:#4A2E1E;--choc-d:#331F14;--turq:#1FC8C8;--turq-d:#17A2A2;--gray:#5C554E;--line:#EDE4DC;--bg:#FFFFFF}
@@ -121,6 +122,7 @@ footer .foot-links a:hover{color:var(--turq-d)}
   .hamburger{display:flex}
   .sticky-cta{display:block}
   body{padding-bottom:60px}
+}
 .img-banner{margin:0 0 8px}
 .img-banner img{width:100%;height:auto;max-height:480px;object-fit:cover;display:block;border-radius:6px}
 /* Location-page emergency + ZIP components */
@@ -134,6 +136,45 @@ footer .foot-links a:hover{color:var(--turq-d)}
 .prep-card p{font-size:13.5px;color:var(--gray);margin:0}
 @media(max-width:900px){.prep-cards{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.prep-cards{grid-template-columns:1fr}.prep-card{border-right:none;border-bottom:1px solid var(--line)}}
+
+/* v11 remediation */
+.hero.has-hero{position:relative;isolation:isolate;color:#fff;padding:72px 0}
+.hero.has-hero .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero.has-hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(51,31,20,.93) 0%,rgba(51,31,20,.82) 55%,rgba(51,31,20,.6) 100%)}
+.hero.has-hero h1{color:#fff}
+.hero.has-hero h1 span{color:var(--turq)}
+.hero.has-hero p.lead{color:#fff;border-left-color:var(--turq)}
+.hero.has-hero .kick{color:var(--turq)}
+.hero.has-hero .byline{color:#EDE4DC}
+.hero.has-hero .btn.ghost{background:transparent;color:#fff;border-color:#fff}
+.hero.has-hero .emg-badge{background:var(--turq);color:var(--choc-d)}
+.hero.has-hero .zip-chip{background:rgba(255,255,255,.14);border-color:#fff;color:#fff}
+.hero.has-hero .sidebox{background:#fff;color:#231911}
+.hero.one .wrap{grid-template-columns:1fr}
+.hero.one .wrap>div{max-width:820px}
+.byline{font-size:13px;color:var(--gray)}
+main p+p{margin-top:14px}
+.bodycopy p{margin-bottom:14px}
+.bodycopy h2,.bodycopy h3{margin-bottom:14px}
+.twocol{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:44px;align-items:start}
+.twocol>article{min-width:0;max-width:820px}
+.sidecard{position:sticky;top:24px;align-self:start;border:1px solid var(--line);border-top:4px solid var(--turq);border-radius:4px;padding:22px;background:#fff}
+.sidecard h3{font-size:20px;margin:6px 0 10px;line-height:1.25}
+.sidecard p{font-size:14.5px;color:var(--gray);margin:0 0 14px}
+.sidecard .btn{width:100%;justify-content:center;padding:13px 18px}
+.sidecard ul{list-style:none;margin:16px 0 0;font-size:13.5px}
+.sidecard li{padding:7px 0 7px 22px;border-top:1px solid var(--line);position:relative}
+.sidecard li:before{content:"\2713";position:absolute;left:0;color:var(--turq-d);font-weight:700}
+.sidecard .sc-link{display:block;margin-top:14px;font-weight:600;color:var(--turq-d);text-decoration:none;font-size:14px}
+.twocol .prep-cards{grid-template-columns:1fr 1fr}
+.twocol .prep-card{border-bottom:1px solid var(--line)}
+.twocol .prep-card:nth-child(2n){border-right:none}
+.twocol .pullquote[style]{margin-left:0!important;margin-right:0!important}
+.localnote{border-left:4px solid var(--turq);background:#FBF7F3;padding:20px 24px;margin:30px 0 8px;border-radius:0 4px 4px 0}
+.localnote h2{font-size:24px;margin:0 0 14px}
+.srcnote{font-size:13px;color:var(--gray)}
+@media(max-width:900px){.pullquote[style]{margin-left:0!important;margin-right:0!important}.tocrow p{flex-shrink:1;max-width:100%;text-align:left}.tocrow h3{flex-shrink:1}.twocol{grid-template-columns:1fr}.sidecard{position:static}.hero.has-hero{padding:48px 0}}
+@media(max-width:520px){.tocrow p{flex-shrink:1;max-width:100%;text-align:left}.tocrow h3{flex-shrink:1}.twocol .prep-cards{grid-template-columns:1fr}.twocol .prep-card{border-right:none}}
 </style>
 
 <script type="application/ld+json">
@@ -167,9 +208,30 @@ footer .foot-links a:hover{color:var(--turq-d)}
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"How do I know if it\u0027s just evaporation?","acceptedAnswer":{"@type":"Answer","text":"Mark the water level with tape and check it against a bucket of water left nearby over the same period - if the pool drops noticeably faster than the bucket, that\u0027s a real leak signal, not just heat."}},
-    {"@type":"Question","name":"Will you have to drain my pool to find the leak?","acceptedAnswer":{"@type":"Answer","text":"Usually not, or only partially - pressure and dye testing are designed specifically to avoid unnecessary draining."}},
-    {"@type":"Question","name":"Can a leak damage my yard or foundation if I wait?","acceptedAnswer":{"@type":"Answer","text":"Yes, over time - especially on sloped lots, a chronic pool leak can erode supporting soil and affect nearby structures, which is part of why we recommend addressing a confirmed leak rather than just refilling indefinitely."}}
+    {
+      "@type": "Question",
+      "name": "How do I know if it's just evaporation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mark the water level with tape and check it against a bucket of water left nearby over the same period - if the pool drops noticeably faster than the bucket, that's a real leak signal, not just heat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will you have to drain my pool to find the leak?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually not, or only partially - pressure and dye testing are designed specifically to avoid unnecessary draining."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a leak damage my yard or foundation if I wait?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, over time - especially on sloped lots, a chronic pool leak can erode supporting soil and affect nearby structures, which is part of why we recommend addressing a confirmed leak rather than just refilling indefinitely."
+      }
+    }
   ]
 }
 </script>
@@ -222,28 +284,21 @@ footer .foot-links a:hover{color:var(--turq-d)}
 <main id="main">
 
 
-<section class="hero"><div class="wrap">
+<section class="hero has-hero one"><img class="hero-bg" src="/images/pool-leak-detection.jpg" alt="Residential pool equipment pad with pump and filter" width="1200" height="900" fetchpriority="high" decoding="async"><div class="wrap">
 <div>
 <h1>Pool Leak Detection &amp; Repair in Thousand Oaks, CA</h1>
 <p class="lead">A pool that's losing more water than evaporation explains needs a real diagnostic, not a guess and a patch - we find the source in the shell, plumbing, or equipment pad before recommending a fix.</p>
 <div class="cta-row"><a class="btn" href="tel:+17147508637">&#9742; Call (714) 750-8637</a><a class="btn ghost" href="/plumbing-services/">See All Services</a></div>
 </div>
-<div class="sidebox">
-<div class="sidebox-label">Talk To A Plumber</div>
-<div class="num"><a href="tel:+17147508637" style="color:inherit;text-decoration:none">(714) 750-8637</a></div>
-<ul><li>Pressure testing &amp; dye testing</li><li>Shell, plumbing, and equipment-pad leaks</li><li>Minimizes deck and paver disruption</li><li>Addresses Conejo Valley soil movement</li></ul>
-</div>
 </div></section>
 
-
-<div class="wrap img-banner"><img src="/images/pool-leak-detection.jpg" alt="Residential pool equipment pad with pump and filter" loading="lazy" width="1200" height="900"></div>
-
-
-<section class="sec"><div class="wrap bodycopy">
+<section class="sec"><div class="wrap twocol">
+<article class="bodycopy">
 <h2>The Detection Process</h2>
 
 <h3>How Much Water Loss Is Normal</h3>
-<p>Pools lose some water to evaporation naturally, more in the hot, dry Conejo Valley summers than people often expect. A rough rule of thumb: losing more than about a quarter inch of water per day, consistently, is a signal worth investigating rather than assuming it's just the heat. Air bubbles in the return lines, difficulty keeping the pump primed, or chemical levels that won't stay balanced no matter how much you add are all signs pointing toward an actual leak rather than normal evaporation.</p>
+<p>Pools lose some water to evaporation naturally, more in the hot, dry Conejo Valley summers than people often expect. A rough rule of thumb: losing more than about a quarter inch of water per day, consistently, is a signal worth investigating rather than assuming it's just the heat.</p>
+<p>Air bubbles in the return lines, difficulty keeping the pump primed, or chemical levels that won't stay balanced no matter how much you add are all signs pointing toward an actual leak rather than normal evaporation.</p>
 
 <h3>Pool Owners Across The City</h3>
 <p>Pools are common on the larger lots in Conejo Oaks, North Ranch, and parts of Lang Ranch. Because the ground under those lots can move, we check the equipment pad and the buried lines before assuming the shell is the problem, which keeps the repair scoped to what is actually leaking.</p>
@@ -252,20 +307,31 @@ footer .foot-links a:hover{color:var(--turq-d)}
 <p>The same expansive clay soil that stresses house foundations across this area affects pool plumbing and shells too - the ground swells in wet winters and contracts in dry summers, and on the area's sloped lots that movement is more pronounced. Over time that shifting can move buried plumbing lines or stress light niches and shell seams, which is a real, area-specific reason pool leaks show up here more than in some flatter, more stable-soil markets.</p>
 
 <h3>Finding The Leak Without Guessing</h3>
-<p>We use pressure testing to isolate whether the leak is in the plumbing lines versus the shell or equipment, and dye testing to visually confirm the exact point once we've narrowed the area - this combination lets us find the source without draining the pool unnecessarily or tearing up decking on a hunch. Once located, we'll tell you honestly whether it's a straightforward equipment-pad or plumbing fix, or a more involved shell repair, and price accordingly rather than defaulting to the most expensive path. Repairs follow standard pool industry practices and, where plumbing crosses into the home's water supply, California Plumbing Code (UPC-based) standards.</p>
+<p>We use pressure testing to isolate whether the leak is in the plumbing lines versus the shell or equipment, and dye testing to visually confirm the exact point once we've narrowed the area - this combination lets us find the source without draining the pool unnecessarily or tearing up decking on a hunch.</p>
+<p>Once located, we'll tell you honestly whether it's a straightforward equipment-pad or plumbing fix, or a more involved shell repair, and price accordingly rather than defaulting to the most expensive path. Repairs follow standard pool industry practices and, where plumbing crosses into the home's water supply, California Plumbing Code (UPC-based) standards.</p>
 
 <h3>Equipment Pad Leaks</h3>
-<p>The equipment pad - pump, filter, heater, and the plumbing connecting them - is one of the most common places we actually find pool water loss, and often one of the easiest to repair once found, since it's all above ground and accessible. A cracked union fitting, a failed pump seal, or a loose connection at the filter can all cause steady water loss that looks, from the pool's perspective, exactly like a shell or underground leak until it's actually inspected.</p>
+<p>The equipment pad - pump, filter, heater, and the plumbing connecting them - is one of the most common places we actually find pool water loss, and often one of the easiest to repair once found, since it's all above ground and accessible.</p>
+<p>A cracked union fitting, a failed pump seal, or a loose connection at the filter can all cause steady water loss that looks, from the pool's perspective, exactly like a shell or underground leak until it's actually inspected.</p>
 
 <h3>Protecting Your Landscaping And Decking</h3>
 <p>We prioritize non-invasive detection methods specifically to protect pavers, decking, and landscaping around the pool - unnecessary excavation on a hunch can crack pavers, kill landscaping, and cost far more to restore than the leak repair itself. Where access is genuinely required, we'll explain exactly what needs to be disturbed and why before starting.</p>
 
 <h3>Seasonal Timing</h3>
 <p>Late spring through early fall is when most pool leaks get noticed, simply because that's when pools are used and filled most actively - but a leak that started over the winter can go unnoticed for months if the pool wasn't being checked regularly. If you're opening the pool for the season and the water level looks lower than you left it, that's worth a check before you assume it's just evaporation from sitting uncovered.</p>
-
+<h2>Spa And Hot Tub Leaks</h2>
+<p>Not every pool leak is in the pool. Callers regularly report water near a hot tub, wet ground along the plumbing run between the spa and the equipment, or a spa that loses level overnight.</p>
+<p>We pressure-test the spa and equipment lines and check the fittings at the pad before anyone digs. A leak on the spa side is often a loose union or a cracked fitting rather than a shell problem.</p>
+</article>
+<aside class="sidecard" aria-label="Call a plumber">
+<div class="kick">24/7 Emergency Line Open</div>
+<h3>Pool Leak Help Today</h3>
+<p>Losing water faster than evaporation? Call for pressure testing.</p>
+<a class="btn" href="tel:+17147508637">&#9742; Call (714) 750-8637</a>
+<ul><li>Flat price quoted before work starts</li><li>California CSLB C-36 licensed</li><li>Same-day service in most cases</li><li>Thousand Oaks + Ventura County</li></ul>
+<a class="sc-link" href="/leak-detection/">Leak detection &rarr;</a>
+</aside>
 </div></section>
-
-
 
 <div class="pullquote"><div class="wrap"><blockquote>"Losing more than a quarter inch a day, consistently? That's worth a real diagnostic, not just topping it off."</blockquote><a class="btn choc" href="tel:+17147508637">&#9742; Call (714) 750-8637</a></div></div>
 
